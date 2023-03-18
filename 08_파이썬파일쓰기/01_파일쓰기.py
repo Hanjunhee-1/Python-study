@@ -77,3 +77,31 @@ with open('./readTest/test1.txt', 'r', encoding='UTF-8') as f:
     for c in content:
         print(c, end='')
 print()
+
+
+
+
+# 파일쓰기(write)
+
+# 예제1
+# with open('./writeTest/content1.txt', 'w') as f:
+#     f.write('Python is good :)\n')
+
+
+# 예제2
+with open('./writeTest/content1.txt', 'a') as f:
+    f.write('Python is good :)\n')
+
+
+
+# 예제3
+# writelines: 리스트의 내용을 파일에 입력
+with open('./writeTest/content1.txt', 'a') as f:
+    l = ['Apple\n', 'Banana\n', 'Citra\n', 'Durian\n']
+    f.writelines(l)
+
+
+# 예제4
+# 터미널로 출력안하고 파일에 출력하는 방법
+with open('./writeTest/content1.txt', 'a') as f:
+    print('Hello, python', file=f)
