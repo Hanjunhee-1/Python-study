@@ -38,7 +38,10 @@ learning_rate = 0.01
 
 # 예측값을 구하는 함수이다.
 def hypothesis(x):
-    H = W * x + b
+
+    # 원래는 예측값을 이렇게 구하는것이 아니지만
+    # 귀찮아서 바꿔주었다
+    H = W * (x * 0.01) + b
     return H
 
 
@@ -86,6 +89,6 @@ def learning(x_train, y_train, W, b, learning_rate, epochs):
 
 W, b = learning(x_train, y_train, W, b, learning_rate, epochs=200000)
 height = int(input('키를 입력하세요: '))
-weight = hypothesis(height*0.01)
+weight = hypothesis(height)
 
 print('예측 몸무게는 {:.4f}kg 입니다.'.format(weight))
